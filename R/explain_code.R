@@ -16,6 +16,6 @@
 #'
 explain_code <- function(code = clipr::read_clip(allow_non_interactive = TRUE)) {
   code <- paste(gsub('"', "'", code), collapse = "\n")
-  prompt <- paste0('Explain the following R code: "', code, '"')
+  prompt <- paste0('Explain the following R code, assuming that the users is fully familier with the tidyverse, so skip to explain the operation of those functions. It should be technical, but short. Use maximum 5 sentences. It should not contain codes from the file and do not use linebreaks or bullet points.\n\n```', code, '\n```')
   parse_response(gpt_get_completions(prompt))
 }

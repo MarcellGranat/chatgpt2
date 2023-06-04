@@ -1,4 +1,4 @@
-Package: chatgpt
+Package: chatgpt2
 Type: Package
 Title: Interface to 'ChatGPT' from R
 Version: 0.2.3

@@ -16,6 +16,6 @@
 #'
 comment_code <- function(code = clipr::read_clip(allow_non_interactive = TRUE)) {
   code <- paste(gsub('"', "'", code), collapse = "\n")
-  prompt <- paste0('Add inline comments to the following R code: "', code, '"')
+  prompt <- paste0('Add inline comments to the following R code, assuming that the user is familier with the tidyverse and common functions, so skip explaining those. Focus on the complex things: "', code, '"')
   parse_response(gpt_get_completions(prompt))
 }

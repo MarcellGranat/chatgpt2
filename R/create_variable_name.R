@@ -16,6 +16,6 @@
 #'
 create_variable_name <- function(code = clipr::read_clip(allow_non_interactive = TRUE)) {
   code <- paste(gsub('"', "'", code), collapse = "\n")
-  prompt <- paste0('Give a good variable name to the result of the following R code: "', code, '"')
+  prompt <- paste0('Give a good variable name to the result of the following R code. (I want to use snake language and note the output type in the name e.g.: pinguins_df): "', code, '"')
   parse_response(gpt_get_completions(prompt))
 }
